@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tugbaustundag.mesajlasmauygulamasi" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Alarm Manager sınıfını kullanabilmek icin gerekli izin kodu -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <!-- Android cihazın, tekil cihaz id (seri numarası)  değerini alabilmek icin gerekli izin kodu -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Notification Receiver tanımladım -->
+        <receiver android:name=".NotificationReceiver" />
+
+        <activity android:name=".MessageList" >
+        </activity>
+        <activity
+            android:name=".SendMessage"
+            android:label="@string/title_activity_send_message" >
+        </activity>
+    </application>
+
+</manifest>
